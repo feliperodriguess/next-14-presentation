@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.global-styles {
+  @apply bg-zinc-900 font-mono text-zinc-200;
+}
+
+.checkbox-label {
+  @apply font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 peer-data-[state=checked]:line-through;
+}

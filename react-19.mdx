@@ -1,0 +1,74 @@
+## React 19: Unleashing New Possibilities
+
+### 1. **React Compiler: Automatic Memoization**
+
+- **Problem**: Manual memoization (using `useMemo`, `useCallback`, etc.) can be cumbersome and error-prone.
+- **Solution**: The **React Compiler** now handles memoization optimizations automatically.
+- **Benefits**:
+  - Cleaner code: Say goodbye to boilerplate memoization.
+  - Faster performance: Optimized rendering without manual intervention.
+- **Deprecated APIs**:
+  - `useMemo`
+  - `useCallback`
+  - `React.memo`
+  - `React.forwardRef`
+  - `React.lazy`
+
+---
+
+### 2. **Actions: Stable Server Actions**
+
+- **What's New?**:
+  - **Server actions** are now stable.
+  - Perform actions on either the server or the client.
+  - New hooks for handling form actions.
+- **Example**:
+
+  ```tsx
+  'use server'
+
+  <form action={search}>
+    <input name="query" />
+    <button type="submit">Search</button>
+  </form>
+  ```
+
+---
+
+### 3. **New Hooks and Directives**
+
+- **useFormStatus**: Access the status of an action.
+- **useFormState**: Handle the result of an action.
+- **useOptimistic**: Update the UI optimistically.
+- **use client** + **use server**: Combine client and server hooks.
+
+---
+
+### 4. **Suspense: Empowering Loading Lifecycle**
+
+- **Integration**: Suspense now works seamlessly with loading resources (stylesheets, fonts, scripts).
+- **Empowered API**: Enhanced capabilities for managing asynchronous data fetching.
+- **Example**:
+  ```tsx
+  <Suspense fallback={<LoadingSpinner />}>
+    <LazyComponent />
+  </Suspense>
+  ```
+
+---
+
+### 5. **SEO Support: Simplified Metadata Handling**
+
+- **Built-in Support**: Render `<title>`, `<meta>`, and `<link>` tags effortlessly.
+- **Anywhere in Components**: Drop them in any component, and they'll be placed correctly in the `<head>` tag.
+
+---
+
+### 6. **Replacements Summary**
+
+- **Old Way**:
+  - `useMemo`, `useCallback`, `memo` → **React Compiler**
+  - `forwardRef` → `ref` is a prop
+  - `React.lazy` → **RSC**, promise-as-child
+  - `useContext` → `use(Context)`
+  - Throwing promises → `use(promise)`
