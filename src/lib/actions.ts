@@ -3,8 +3,10 @@
 import { revalidateTag } from "next/cache";
 
 import { prisma } from "./prisma";
+import { sleep } from "./utils";
 
 export async function addTodo(formData: FormData) {
+  await sleep();
   const title = formData.get("title");
 
   try {
@@ -15,8 +17,8 @@ export async function addTodo(formData: FormData) {
     });
 
     return { success: true };
-  } catch (error) {
-    return { success: false, error };
+  } catch (error: any) {
+    return { success: false, error: error.message };
   } finally {
     revalidateTag("todos");
   }

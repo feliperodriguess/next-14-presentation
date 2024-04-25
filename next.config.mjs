@@ -6,6 +6,14 @@ const nextConfig = {
   //     static: 180,
   //   },
   // },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "rickandmortyapi.com",
+      },
+    ],
+  },
 };
 
 export default nextConfig;

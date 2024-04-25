@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Todo } from "@prisma/client";
 
+import { sleep } from "@/lib/utils";
 import { Button } from "./button";
 import { Input } from "./input";
 
@@ -13,6 +14,8 @@ export function FormOld({ setTodos }: { setTodos: (todos: Todo[]) => void }) {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setIsSubmitting(true);
+
+    await sleep();
 
     await fetch("/api/todos", {
       method: "POST",

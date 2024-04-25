@@ -4,11 +4,14 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-center">
       <h1 className="text-xl">Pages:</h1>
-      <Link className="mb-2 mt-12 text-xl underline" href="/old">
-        Old
+      <Link className="mt-12 text-xl underline" href="/todos-old">
+        Todos (Old Approach)
       </Link>
-      <Link className="text-xl underline" href="/new">
-        New
+      <Link className="my-2 text-xl underline" href="/todos-new">
+        Todos (New Approach)
+      </Link>
+      <Link className="text-xl underline" href="/characters">
+        Characters
       </Link>
     </main>
   );
