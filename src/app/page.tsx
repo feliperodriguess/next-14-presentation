@@ -10,8 +10,11 @@ export default function Home() {
       <Link className="my-2 text-xl underline" href="/todos-new">
         Todos (New Approach)
       </Link>
-      <Link className="text-xl underline" href="/characters">
+      <Link className="mb-2 text-xl underline" href="/characters">
         Characters
+      </Link>
+      <Link className="text-xl underline" href="/todos-optimistic">
+        Optimistic UI
       </Link>
     </main>
   );
